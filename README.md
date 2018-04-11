@@ -27,3 +27,19 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Deployment
+
+deploy to github pages
+
+Ensure you have the githubpages cli installed
+
+```bash
+npm i -g angular-cli-ghpages
+```
+
+Build for production and then deploy to github pages
+```bash
+ng build --prod --base-href "https://psinkinson.github.io/pwa-login/"
+angular-cli-ghpages [OPTIONS]
+```
