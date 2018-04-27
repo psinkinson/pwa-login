@@ -7,17 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'app';
-  initStatus = '';
-  updatedStatus = '';
   statuses = [];
+  ref = '';
+  opnr = null;
 
   private storageKey = 'app-data';
 
   ngOnInit() {
     const currentLocalSt = window.localStorage.getItem(this.storageKey);
-    console.log('initLocalSt', currentLocalSt);
-    this.initStatus = !!currentLocalSt ? currentLocalSt : 'not set';
     this.statuses.push(!!currentLocalSt ? currentLocalSt : 'not set');
+    this.ref = document.referrer ? document.referrer : 'no referrer';
+    this.opnr = window.opener;
+    console.log('ngOnInit - window.opener', window.opener);
+    console.log('ngOnInit - document.referrer', document.referrer);
   }
 
   setLocalStorage() {
@@ -26,7 +28,6 @@ export class AppComponent implements OnInit {
     ' ' + dt.getHours() + ':' + dt.getMinutes() + ' ' + dt.getSeconds();
     window.localStorage.setItem(this.storageKey, val);
     const currentLocalSt = window.localStorage.getItem(this.storageKey);
-    this.updatedStatus = !!currentLocalSt ? currentLocalSt : 'not set';
     this.statuses.push(!!currentLocalSt ? currentLocalSt : 'not set');
   }
 
@@ -34,6 +35,14 @@ export class AppComponent implements OnInit {
     window.localStorage.removeItem(this.storageKey);
     const currentLocalSt = window.localStorage.getItem(this.storageKey);
     this.statuses.push(!!currentLocalSt ? currentLocalSt : 'not set');
+  }
+
+  openLogin() {
+    window.open('login.html');
+  }
+
+  redirectToLogin() {
+    window.location.href = 'https://psinkinson.github.io/redirect-to-referer/';
   }
 
 }

@@ -43,3 +43,7 @@ Build for production and then deploy to github pages
 ng build --prod --base-href "https://psinkinson.github.io/pwa-login/"
 angular-cli-ghpages [OPTIONS]
 ```
+Or there is a shorter publish command
+```bash
+ngh
+```

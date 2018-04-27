@@ -1,15 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div >
   <h1>
-    Progressive Web App - local storage test
+    Progressive Web App
   </h1>
-  <h4></h4>
+  <h4>Local storage test</h4>
+  <div>referrer: {{ref}}</div>
+  <div>opener: {{opnr}}</div>
 </div>
 
 <button (click)="setLocalStorage()" style="display: block; padding: 10px; margin-bottom: 10px;">Update local storage</button>
 
 <button (click)="clearLocalStorage()" style="display: block; padding: 10px; margin-bottom: 10px;">Clear local storage</button>
 
+<button (click)="openLogin()" style="display: block; padding: 10px; margin-bottom: 10px;">Open login</button>
+
+<button (click)="redirectToLogin()" style="display: block; padding: 10px; margin-bottom: 10px;">Redirect to login</button>
 
 <h3>Statuses</h3>
 <ul>
