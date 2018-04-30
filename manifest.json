@@ -2,10 +2,10 @@
     "name": "PWA Login",
     "short_name": "PWALogin",
     "start_url": "index.html",
+    "scope": "/",
     "display": "standalone",
     "background_color": "#2BB5FD",
     "theme_color": "#2CB5FD",
-    "scope": "/",
     "icons": [
       {
         "src": "assets/icons/ic_grade.png",
@@ -44,6 +44,11 @@
         "src": "assets/icons/icon-128x128.png",
         "sizes": "128x128",
         "type": "image/png"
+      },
+      {
+        "src": "assets/icons/Airhorner_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
       },
       {
         "src": "/icon-1024x1024.png",
