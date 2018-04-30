@@ -53,17 +53,18 @@ export class AppComponent implements OnInit {
   }
 
   openLogin() {
-    window.addEventListener('message',  this.updateFromChild);
+    window.addEventListener('message',  this.messageFromChild);
     // window.open('https://psinkinson.github.io/redirect-to-referer/');
-    window.open('https://output.jsbin.com/supuqeg');
+    window.open('https://redirect-to-referrer.herokuapp.com/index.html');
   }
 
   redirectToLogin() {
-    window.addEventListener('message',  this.updateFromChild);
-    window.location.href = 'https://psinkinson.github.io/redirect-to-referer/';
+    window.addEventListener('message',  this.messageFromChild);
+    // window.location.href = 'https://psinkinson.github.io/redirect-to-referer/';
+    window.location.href = 'https://redirect-to-referrer.herokuapp.com/index.html';
   }
 
-  updateFromChild(e) {
+  messageFromChild(e) {
     console.log('ngOnInit - updateFromChild', e.origin, this);
     window.location.href = window.location.href + '?logincomplete=1';
   }
