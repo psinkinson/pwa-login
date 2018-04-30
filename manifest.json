@@ -1,7 +1,7 @@
 {
     "name": "PWA Login",
     "short_name": "PWALogin",
-    "start_url": "/?utm_source=homescreen",
+    "start_url": "/index.html",
     "display": "standalone",
     "background_color": "#2BB5FD",
     "theme_color": "#2CB5FD",
