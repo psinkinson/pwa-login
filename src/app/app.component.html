@@ -3,21 +3,34 @@
   <h1>
     Progressive Web App
   </h1>
-  <h4>Local storage test</h4>
+  <h4>Login flow test</h4>
+  <p>Save this to your homepage to test the redirect login flow</p>
   <div>referrer: {{ref}}</div>
-  <div>opener: {{opnr}}</div>
+  <div>parentWindow: {{parentWindow}}</div>
 </div>
 
-<button (click)="setLocalStorage()" style="display: block; padding: 10px; margin-bottom: 10px;">Update local storage</button>
+<div *ngIf="welcomeBack">
+  Welcome back!
+</div>
+<div *ngIf="!welcomeBack && parentWindow">
+  <h4>Login complete and a same origin parent window is present</h4>
+  
+  <button (click)="backToParent()" style="display: block; padding: 10px; margin-bottom: 10px; margin-top: 10px;">Go back to parent</button>
 
-<button (click)="clearLocalStorage()" style="display: block; padding: 10px; margin-bottom: 10px;">Clear local storage</button>
+</div>
+<div *ngIf="!welcomeBack && !parentWindow">
+  <!-- <button (click)="setLocalStorage()" style="display: block; padding: 10px; margin-bottom: 10px;">Update local storage</button>
 
-<button (click)="openLogin()" style="display: block; padding: 10px; margin-bottom: 10px;">Open login</button>
+  <button (click)="clearLocalStorage()" style="display: block; padding: 10px; margin-bottom: 10px;">Clear local storage</button> -->
+  <br/>
+  <button (click)="openLogin()" style="display: block; padding: 10px; margin-bottom: 10px;">Open login</button>
 
-<button (click)="redirectToLogin()" style="display: block; padding: 10px; margin-bottom: 10px;">Redirect to login</button>
+  <button (click)="redirectToLogin()" style="display: block; padding: 10px; margin-bottom: 10px;">Redirect to login</button>
 
-<h3>Statuses</h3>
-<ul>
-  <li *ngFor="let status of statuses">{{ status }}</li>
-</ul>
+  <!-- <h3>Statuses</h3>
+  <ul>
+    <li *ngFor="let status of statuses">{{ status }}</li>
+  </ul> -->
+</div>
+
 

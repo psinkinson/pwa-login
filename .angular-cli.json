@@ -12,6 +12,7 @@
         "favicon.ico",
         "favicon-16x16.png",
         "favicon-32x32.png",
+        "icon-1024x1024.png",
         "manifest.json",
         "serviceworker.js"
       ],
